@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Burgershot Menu</title>
+	<link rel="shortcut icon" href="https://eiseu.github.io/burgershot/images/logo.png">
+	<link rel="stylesheet" href="./index.css">
+	<script type="text/javascript" src="https://use.fontawesome.com/3f95c72d48.js"></script>
+</head>
+<body onload="loadPage()" class="dark-theme">
+	<div id="form">
+		<div class="form-group">
+			<span style="font-weight: bold;">Burgershot Menu</span>
+			<span id="action-buttons">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="btn" onclick="newOrder();" title="Clear current order"><i class="fa fa-refresh" aria-hidden="true"></i> New Order</div>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<div class="btn" onclick="toggleCombos()" title="Select current active combos">
+					<i class="fa fa-cog" aria-hidden="true"></i> Combo Settings
+				</div></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="darkmode" class="switch">
+			  <input type="checkbox" id="darkmode" name="darkmode" value="darkmode">
+			  <span class="slider round"></span>
+			</label>
+		</div>
+		<div class="form-group" id="table">
+			<table>
+				<tbody><tr><td></td><td></td><td></td></tr>
+					<tr>
+					<td colspan="3"><center><strong><u>Combination Items:</u></strong></center></td>
+					</tr>
+					<tr><td>
+						<center>
+							<button class="btn" title="Add 1x The Gold Mine Combo" onclick="add(&quot;The Gold Mine Combo&quot;)"><strong>
+								<img src="./images/the_gold_mine.png" width="20" height="20">The Gold Mine Combo</strong></button>
+							<br>Qty: <strong><span id="The Gold Mine Combo-#">0</span></strong> | $220 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit The Gold Mine Combo quantity" onclick="editQuantity(&quot;The Gold Mine Combo&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x The Gold Mine Combo" onclick="remove(&quot;The Gold Mine Combo&quot;)"></i>
+						</center>
+				        	</td>
+						<td>
+						<center>
+							<button class="btn" title="Add 1x The Marathon Combo" onclick="add(&quot;The Marathon Combo&quot;)"><strong>
+								<img src="./images/the_marathon.png" width="20" height="20">The Marathon Combo</strong></button>
+						<br>Qty: <strong><span id="The Marathon Combo-#">0</span></strong> | $200 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit The Marathon Combo quantity" onclick="editQuantity(&quotThe Marathon Combo&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x The Marathon Combo" onclick="remove(&quot;The Marathon Combo&quot;)"></i>
+						</center>
+						</td><td></td></tr>
+					<tr><td colspan="3"><center><strong><u>Burger Meals:</u></strong></center></td></tr>
+					<tr><td><center>
+						<button class="btn" title="Add 1x Murder Meal" onclick="add(&quot;Murder Meal&quot;)"><strong>
+							<img src="./images/murder_meal.png" width="20" height="20">Murder Meal</strong></button>
+						<br>Qty: <strong><span id="Murder Meal-#">0</span></strong> | $250 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Murder Meal quantity" onclick="editQuantity(&quot;Murder Meal&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Murder Meal" onclick="remove(&quot;Murder Meal&quot;)"></i></center></td><td>
+						<center>
+							<button class="btn" title="Add 1x Money Shot Meal" onclick="add(&quot;Money Shot Meal&quot;)"><strong>
+								<img src="./images/money_shot.png" width="20" height="20">Money Shot Meal</strong></button>
+							<br>Qty: <strong><span id="Money Shot Meal-#">0</span></strong> | $200 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Money Shot Meal quantity" onclick="editQuantity(&quot;Money Shot Meal&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Money Shot Meal" onclick="remove(&quot;Money Shot Meal&quot;)"></i>
+						</center>
+						</td><td></td></tr><tr><td colspan="3">
+							<center><strong><u>Individual Items:</u></strong></center></td></tr>
+					<tr>
+						<td>
+							<center><button class="btn" title="Add 1x Salad" onclick="add(&quot;Salad&quot;)"><strong>
+							<img src="./images/salad.png" width="20" height="20">Salad</strong></button>
+							<br>Qty: <strong><span id="Salad-#">0</span></strong> | $150 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Salad quantity" onclick="editQuantity(&quot;Salad&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Salad" onclick="remove(&quot;Salad&quot;)"></i></center></td>
+						
+						<td>
+							<!--<center><button class="btn" title="Add 1x Hot Chocolate" onclick="add(&quot;Hot Chocolate&quot;)"><strong>
+							<img src="./images/hot_chocolate.png" width="20" height="20">Hot Chocolate</strong></button>
+							<br>Qty: <strong><span id="Hot Chocolate-#">0</span></strong> | $25 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Hot Chocolate quantity" onclick="editQuantity(&quot;Hot Chocolate&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Hot Chocolate" onclick="remove(&quot;Hot Chocolate&quot;)"></i>
+							</center>-->
+							
+							<center><button class="btn" title="Add 1x Slime Juice" onclick="add(&quot;Slime Juice&quot;)"><strong>
+							<img src="./images/slime_juice.png" width="20" height="20">Slime Juice</strong></button>
+							<br>Qty: <strong><span id="Slime Juice-#">0</span></strong> | $30 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Slime Juice quantity" onclick="editQuantity(&quot;Slime Juice&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Slime Juice" onclick="remove(&quot;Slime Juice&quot;)"></i>
+							</center>
+						</td>
+						<td>
+							<!--<center><button class="btn" title="Add 1x Egg Nog" onclick="add(&quot;Egg Nog&quot;)"><strong>
+							<img src="./images/egg_nog.png" width="20" height="20">Egg Nog</strong></button>
+							<br>Qty: <strong><span id="Egg Nog-#">0</span></strong> | $25 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Egg Nog quantity" onclick="editQuantity(&quot;Egg Nog&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Egg Nog" onclick="remove(&quot;Egg Nog&quot;)"></i>
+							</center>-->
+							
+							<center><button class="btn" title="Add 1x Breadsticks" onclick="add(&quot;Breadsticks&quot;)"><strong>
+							<img src="./images/breadsticks.png" width="20" height="20">Breadsticks</strong></button>
+							<br>Qty: <strong><span id="Breadsticks-#">0</span></strong> | $30 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Breadsticks quantity" onclick="editQuantity(&quot;Breadsticks&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Breadsticks" onclick="remove(&quot;Breadsticks&quot;)"></i>
+							</center>
+						</td></tr><tr>
+					<td><center><button class="btn" title="Add 1x Gold Rings" onclick="add(&quot;Gold Rings&quot;)"><strong>
+						<img src="./images/gold_rings.png" width="20" height="20">Gold Rings</strong></button><br>Qty: <strong><span id="Gold Rings-#">0</span></strong> | $40 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Gold Rings quantity" onclick="editQuantity(&quot;Gold Rings&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Gold Rings" onclick="remove(&quot;Gold Rings&quot;)"></i></center></td><td>
+					<center><button class="btn" title="Add 1x Cherry Poppers" onclick="add(&quot;Cherry Poppers&quot;)"><strong>
+						<img src="./images/cherry_poppers.png" width="20" height="20">Cherry Poppers</strong></button>
+						<br>Qty: <strong><span id="Cherry Poppers-#">0</span></strong> | $30 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Cherry Poppers quantity" onclick="editQuantity(&quot;Cherry Poppers&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Cherry Poppers" onclick="remove(&quot;Cherry Poppers&quot;)"></i></center></td>
+					<td><center><button class="btn" title="Add 1x Golden Nuggs" onclick="add(&quot;Golden Nuggs&quot;)"><strong>
+						<img src="./images/golden_nuggs.png" width="20" height="20">Golden Nuggs</strong></button>
+						<br>Qty: <strong><span id="Golden Nuggs-#">0</span></strong> | $160 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Golden Nuggs quantity" onclick="editQuantity(&quot;Golden Nuggs&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Golden Nuggs" onclick="remove(&quot;Golden Nuggs&quot;)"></i></center></td></tr>
+					<tr><td><center><button class="btn" title="Add 1x Money Shot" onclick="add(&quot;Money Shot&quot;)"><strong>
+						<img src="./images/money_shot.png" width="20" height="20">Money Shot</strong></button>
+						<br>Qty: <strong><span id="Money Shot-#">0</span></strong> | $150 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Money Shot quantity" onclick="editQuantity(&quot;Money Shot&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Money Shot" onclick="remove(&quot;Money Shot&quot;)"></i></center></td>
+					<td><center><button class="btn" title="Add 1x Soda" onclick="add(&quot;Soda&quot;)"><strong>
+						<img src="./images/soda.png" width="20" height="20">Soda</strong></button>
+						<br>Qty: <strong><span id="Soda-#">0</span></strong> | $30 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Soda quantity" onclick="editQuantity(&quot;Soda&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Soda" onclick="remove(&quot;Soda&quot;)"></i></center></td>
+						<td><center><button class="btn" title="Add 1x Fries" onclick="add(&quot;Fries&quot;)"><strong>
+							<img src="./images/fries.png" width="20" height="20">Fries</strong></button><br>Qty: <strong><span id="Fries-#">0</span></strong> | $30 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Fries quantity" onclick="editQuantity(&quot;Fries&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Fries" onclick="remove(&quot;Fries&quot;)"></i></center></td></tr>
+						<tr>
+							<td><center><button class="btn" title="Add 1x Rimjob" onclick="add(&quot;Rimjob&quot;)"><strong>
+							<img src="./images/rimjob.png" width="20" height="20">Rimjob</strong></button>
+							<br>Qty: <strong><span id="Rimjob-#">0</span></strong> | $25 | 
+							<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Rimjob quantity" onclick="editQuantity(&quot;Rimjob&quot;)"></i> 
+							<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Rimjob" onclick="remove(&quot;Rimjob&quot;)"></i></center></td>
+						<td><center><button class="btn" title="Add 1x Milkshake" onclick="add(&quot;Milkshake&quot;)"><strong>
+						<img src="./images/milkshake.png" width="20" height="20">Milkshake</strong></button><br>Qty: <strong><span id="Milkshake-#">0</span></strong> | $30 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Milkshake quantity" onclick="editQuantity(&quot;Milkshake&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Milkshake" onclick="remove(&quot;Milkshake&quot;)"></i></center></td>
+					<td><center><button class="btn" title="Add 1x Toy" onclick="add(&quot;Toy&quot;)"><strong>
+						<img src="./images/toy.png" width="20" height="20">Toy</strong></button><br>Qty: <strong><span id="Toy-#">0</span></strong> | $101 | 
+						<i class="fa fa-pencilfa fa-pencil-square" aria-hidden="true" title="Manually edit Toy quantity" onclick="editQuantity(&quot;Toy&quot;)"></i> 
+						<i class="fa fa-minus-circle" aria-hidden="true" title="Remove 1x Toy" onclick="remove(&quot;Toy&quot;)"></i></center></td>
+							<td></td>
+					</tr>
+					<tr><td colspan="3">
+						<input type="checkbox" id="half_off-DISCOUNT" name="half_off-DISCOUNT" value="half_off-DISCOUNT">
+						<label for="half_off-DISCOUNT">50% Discount (PD, EMS, BS Employees...)</label><br>
+						<input type="checkbox" id="twentyfive_off-DISCOUNT" name="twentyfive_off-DISCOUNT" value="twentyfive_off-DISCOUNT">
+						<label for="twentyfive_off-DISCOUNT">Event Sale (25% Off)</label><br>
+						<input type="checkbox" id="blackout-DISCOUNT" name="blackout-DISCOUNT" value="blackout-DISCOUNT">
+						<label for="blackout-DISCOUNT">Blackout Sale (15% off)</label><br></td></tr></tbody></table></div>
+		<div>
+			<span><i>Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by Adam Swanson (Accepting donations, State ID: 21197)</i></span>
+		</div>
+	</div>
+	<pre id="reportBody"><img src="./images/bs-logo.svg" width="45%">
+
+<strong>ITEMS ORDERED:</strong>
+
+
+
+<strong>SUBTOTAL:</strong> <span class="green">$0</span></pre>
+<script type="text/javascript" src="./order-generator.js"></script>
+
+</body></html>
